@@ -55,7 +55,8 @@ if (isset($_POST['url'])) {
         header("Location: " . Config::get('index_redirect'));
 
     } else {
-        echo render_template("./templates/main.php", array('version' => Proxy::VERSION));
+       // echo render_template("./templates/main.php", array('version' => Proxy::VERSION));
+       echo 'No Direct Access Allowed';
     }
 
     exit;
@@ -117,11 +118,12 @@ try {
 
     } else {
 
-        echo render_template("./templates/main.php", array(
-            'url' => $url,
-            'error_msg' => $ex->getMessage(),
-            'version' => Proxy::VERSION
-        ));
+        // echo render_template("./templates/main.php", array(
+        //     'url' => $url,
+        //     'error_msg' => $ex->getMessage(),
+        //     'version' => Proxy::VERSION
+        // ));
+        echo "Can't Get";
 
     }
 }
